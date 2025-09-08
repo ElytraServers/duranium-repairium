@@ -3,6 +3,8 @@ plugins {
     id 'java-library'
     id 'maven-publish'
     id 'net.neoforged.moddev.legacyforge' version '2.0.91'
+
+    id 'com.palantir.git-version' version '4.0.0'
 }
 
 tasks.named('wrapper', Wrapper).configure {
@@ -16,6 +18,13 @@ tasks.named('wrapper', Wrapper).configure {
 
 version = mod_version
 group = mod_group_id
+
+try {
+    version = gitVersion()
+} catch(Exception e) {
+    println "Failed to read the version information from Git."
+    e.printStackTrace()
+}
 
 repositories {
     mavenLocal()
@@ -115,6 +124,19 @@ obfuscation {
     createRemappingConfiguration(configurations.localRuntime)
 }
 
+repositories {
+    exclusiveContent {
+        forRepository {
+            maven {
+                url "https://cursemaven.com"
+            }
+        }
+        filter {
+            includeGroup "curse.maven"
+        }
+    }
+}
+
 dependencies {
     // If you wish to declare dependencies against mods, make sure to use the 'mod*' configurations so that they're remapped.
 	// See https://github.com/neoforged/ModDevGradle/blob/main/LEGACY.md#remapping-mod-dependencies for more information.
@@ -140,6 +162,11 @@ dependencies {
     // For more info:
     // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html
     // http://www.gradle.org/docs/current/userguide/dependency_management.html
+
+    modImplementation "curse.maven:architectury-419699:5137938"
+
+    modImplementation "curse.maven:ftb-library-404465:6807424"
+    modImplementation "curse.maven:ftb-essentials-410811:6555287"
 }
 
 // Uncomment the lines below if you wish to configure mixin. The mixin file should be named modid.mixins.json.
