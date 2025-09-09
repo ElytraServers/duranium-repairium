@@ -1,0 +1,6 @@
+{
+  "package": "cn.elytra.mod.duranium_repairium.mixins",
+  "mixins": [
+    "sophisticated_storage.PackingTapeDurabilityFix"
+  ]
+}

@@ -2,7 +2,9 @@ package cn.elytra.mod.duranium_repairium;
 
 import cn.elytra.mod.duranium_repairium.general.GeneralFix;
 import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -27,6 +29,8 @@ public class DuraniumRepairium {
                 LOG.error("Failed to initialize a fix class {}", initializer.getClass(), e);
             }
         }
+
+        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, Config.CONFIG_SPEC);
     }
 
 }

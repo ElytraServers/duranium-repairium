@@ -9,3 +9,14 @@ cause abilities (including fly ability "mayfly", from `/fly`) de-sync, which mea
 the server allows you to.
 
 用于修复使用 FTB Essentials 指令跨世界传送时，能力数据失去同步。你“在本地”不能飞行，但是服务器允许。
+
+[FTB-Mods-Issues#1782](https://github.com/FTBTeam/FTB-Mods-Issues/issues/1782)
+
+### Unbreakable Packing Tape 无限耐久包装带
+
+Used to fix the problem where _Unbreakable_ Packing Tapes from Sophisticated Storage are still receive damage
+when using.
+
+用于修复 Sophisticated Storage 包装带在 _不可破坏_ 的情况下仍然掉耐久。
+
+[SophisticatedStorage#732](https://github.com/P3pp3rF1y/SophisticatedStorage/issues/732)
