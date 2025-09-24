@@ -171,6 +171,8 @@ dependencies {
     modImplementation "curse.maven:sophisticated-core-618298:6965342"
     modImplementation "curse.maven:sophisticated-storage-619320:6960639"
 
+    modImplementation "curse.maven:libx-412525:4947474"
+    modImplementation "curse.maven:travel-anchors-413234:4683662"
 }
 
 mixin {

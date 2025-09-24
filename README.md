@@ -1,5 +1,7 @@
 # Duranium Repairium 铿铀修复
 
+[![Build](https://github.com/ElytraServers/duranium-repairium/actions/workflows/build.yml/badge.svg)](https://github.com/ElytraServers/duranium-repairium/actions/workflows/build.yml)
+
 ## Features 功能
 
 ### Sync Player Abilities on Dimension Change 跨世界传送时同步玩家能力
